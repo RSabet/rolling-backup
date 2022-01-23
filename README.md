@@ -2,4 +2,8 @@
 create rolling backups of a file
 
 ## installation
-`pip install rolling-backup`
+``` 
+$ pip install rolling-backup
+```
+
+## Usage
