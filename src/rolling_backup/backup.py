@@ -36,9 +36,3 @@ def backup(filename: str, num_to_keep: int = 5) -> bool:
                     f"{filename}.{dest:0{digits}d}")
     shutil.copy(filename, f"{filename}." + '0' * digits)
     return True
-
-
-if __name__ == '__main__':
-    def main() -> int:
-        return backup("c:\\temp\\t\\test.bin")
-    main()
