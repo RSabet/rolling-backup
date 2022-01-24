@@ -1,4 +1,4 @@
-name: Workflow for Codecov
+name: Codecoverage
 on: [push, pull_request]
 jobs:
   run:
@@ -14,7 +14,7 @@ jobs:
         run: pip install -r requirements_dev.txt
       - name: Run tests and collect coverage
         run: |
-          pytest tests
+          pytest 
           coverage xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
