@@ -24,7 +24,7 @@ def backup(filename: str, num_to_keep: int = 5) -> bool:
 
     if not jobs:
         if numbers and numbers[0] == 0:
-            jobs = [(0, 1),]
+            jobs = [(0, 1), ]
     elif jobs[0][0] != 0:
         jobs = []
     elif len(jobs) < num_to_keep - 1:
@@ -32,11 +32,13 @@ def backup(filename: str, num_to_keep: int = 5) -> bool:
         if os.path.exists(f"{filename}.{num:0{digits}d}"):
             jobs.append((num, num + 1))
     for src, dest in list(reversed(list(jobs)))[:num_to_keep]:
-        shutil.move(f"{filename}.{src:0{digits}d}", f"{filename}.{dest:0{digits}d}")
+        shutil.move(f"{filename}.{src:0{digits}d}",
+                    f"{filename}.{dest:0{digits}d}")
     shutil.copy(filename, f"{filename}." + '0' * digits)
     return True
 
+
 if __name__ == '__main__':
     def main() -> int:
-        return rolling_backup(r"c:\temp\t\test.bin")
+        return backup("c:\\temp\\t\\test.bin")
     main()

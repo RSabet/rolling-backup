@@ -1,0 +1,7 @@
+codecov
+coverage
+tox
+mypy
+pytest
+pytest-cov
+flake8
